@@ -26,6 +26,8 @@ env:
   WINFLEXBISON_VERSION: '2.5.24'
   DIFFUTILS_VERSION: '2.8.7-1'
 
+
+
 permissions:
   contents: read
 
@@ -269,12 +271,6 @@ jobs:
       uses: TheMrMilchmann/setup-msvc-dev@v3
       with: 
         arch: x86
-
-    - name: Install WiX
-      shell: cmd
-      run: |
-        dotnet tool install --global wix
-        wix extension add --global WixToolset.UI.wixext/6.0.0
 
     - name: build psqlodbc standard
       shell: powershell      
